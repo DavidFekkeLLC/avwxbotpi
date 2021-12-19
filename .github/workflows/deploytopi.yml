@@ -1,0 +1,30 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm ci
+    - shell: bash
+      run: |
+        export AIRPORT=${{ secrets.AIRPORT}}
+        pm2 stop avwxbotpi
+        node ~/Documents/projects/lights/turnoff.js
+        pm2 delete avwxbotpi
+        rm -rf ~/Documents/projects/avwxbot
+        mkdir ~/Documents/projects/avwxbot
+        cp -r * ~/Documents/projects/avwxbot
+        pm2 start ~/Documents/projects/avwxbot/index.js --name avwxbotpi
+        pm2 save
