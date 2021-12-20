@@ -36,7 +36,7 @@ particleButtonStream.on('event', function(data) {
 });
 
 const main = async () => {
-    setCurrentWX();
+    await setCurrentWX();
 }
 
 // Starting the light show

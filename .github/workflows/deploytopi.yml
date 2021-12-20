@@ -25,5 +25,6 @@ jobs:
         rm -rf ~/Documents/projects/avwxbot
         mkdir ~/Documents/projects/avwxbot
         cp -r * ~/Documents/projects/avwxbot
-        pm2 start ~/Documents/projects/avwxbot/index.js --name avwxbotpi
+        cd ~/Documents/projects/avwxbot/
+        pm2 start index.js --name avwxbotpi
         pm2 save
