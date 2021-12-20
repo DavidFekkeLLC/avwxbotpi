@@ -19,7 +19,6 @@ jobs:
     - run: npm ci
     - shell: bash
       run: |
-        export AIRPORT=${{ secrets.AIRPORT}}
         pm2 stop avwxbotpi
         node ~/Documents/projects/lights/turnoff.js
         pm2 delete avwxbotpi

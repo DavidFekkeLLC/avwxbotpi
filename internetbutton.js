@@ -1,7 +1,7 @@
 import Particle from 'particle-api-js';
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 
-dotenv.config();
+//dotenv.config();
 
 const particle = new Particle();
 const access_token = process.env.particle_access_token;
