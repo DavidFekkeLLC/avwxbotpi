@@ -1,4 +1,4 @@
-import changeState, { redState, blueState, greenState, offState } from './changestate.js';
+import changeState, { redState, blueState, greenState, pinkState, offState } from './changestate.js';
 import currentMetar from './currentMetar.js';
 import { particleButtonStream, particleColorForWeather } from './internetbutton.js';
 
