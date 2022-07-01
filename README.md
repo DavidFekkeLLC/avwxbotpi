@@ -6,3 +6,5 @@ This script talks to a Hue light bulb over the Hue bridge. It requires two envir
 
 Hue provides instructions on how to get the whitelisted username from the following [web page](https://developers.meethue.com/develop/get-started-2/).
 
+Copyright 2022
+
